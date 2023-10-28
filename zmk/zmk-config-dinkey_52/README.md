@@ -1,0 +1,1 @@
+# zmk-config-dinkey_52

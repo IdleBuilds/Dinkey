@@ -1,0 +1,26 @@
+# Copyright (c) 2021 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if SHIELD_DINKEY_42_LEFT
+
+config ZMK_KEYBOARD_NAME
+	default "Dinkey 42"
+
+config ZMK_SPLIT_BLE_ROLE_CENTRAL
+	default y
+
+endif
+
+if SHIELD_DINKEY_42_RIGHT
+
+config ZMK_KEYBOARD_NAME
+	default "Dinkey_42 Right"
+
+endif
+
+if SHIELD_DINKEY_42_LEFT || SHIELD_DINKEY_42_RIGHT
+
+config ZMK_SPLIT
+	default y
+
+endif
