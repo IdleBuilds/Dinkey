@@ -8,6 +8,14 @@ Vial is a QMK fork that adds a real-time GUI keymap editor over USB — remap ke
 
 ---
 
+## Status
+
+Vial PRs for the Dinkey 34 and Dinkey 32|30 are pending merge into the main Vial-QMK repository. Once merged, the keyboards will be available natively in Vial without any additional setup.
+
+In the meantime, the keyboard definition files are in this folder and can be used by copying them into your local Vial-QMK installation.
+
+---
+
 ## Supported Boards
 
 | Board | Vial Path |
@@ -27,6 +35,7 @@ make git-submodule
 ```
 
 2. Set up the QMK build environment: [docs.qmk.fm/newbs](https://docs.qmk.fm/newbs)
+3. Copy the keyboard folders from this directory into `keyboards/idlebuilds/` in your Vial-QMK installation
 
 ---
 
@@ -71,7 +80,7 @@ Full assembly instructions at [idlebuilds.com/build-guide](https://idlebuilds.co
 
 ## Contact
 
-[eldi@idlebuilds.com](mailto:eldi@idlebuilds.com)
+[clayton@idlebuilds.com](mailto:clayton@idlebuilds.com)
 
 ---
 

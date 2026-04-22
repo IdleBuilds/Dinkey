@@ -44,7 +44,7 @@ A 34-key column-staggered wireless split. 3 pinky column keys and 2 thumb keys p
 
 | 32-key config | 30-key config |
 |:---:|:---:|
-| <img src="docs/images/dinkey_32_30_32_key_config_zmk.png" width="420"/> | <img src="docs/images/dinkey_32_30_30key_config_qmk.png" width="420"/> |
+| <img src="docs/images/dinkey_32_30_32_key_config_zmk.png" width="420"/> | <img src="docs/images/dinkey_32_30_30_key_config_zmk.png" width="420"/> |
 
 | No case | Side profile |
 |:---:|:---:|
@@ -98,8 +98,8 @@ Full step-by-step assembly instructions including soldering, flashing, and troub
 | Folder | Contents |
 |---|---|
 | `kicad/` | PCB design files (KiCad) |
-| `qmk/` | QMK firmware + README |
-| `vial-qmk/` | Vial firmware + README |
+| `qmk/` | QMK keyboard definition files |
+| `vial-qmk/` | Vial keyboard definition files |
 | `zmk/` | ZMK config files (legacy, see standalone repos above) |
 | `docs/` | Images, schematics, reference files |
 
@@ -111,9 +111,12 @@ Full step-by-step assembly instructions including soldering, flashing, and troub
 |---|---|---|
 | **Keys** | 34 | 32 or 30 |
 | **Switches** | Kailh Choc V1 | Kailh Choc V1 |
-| **Controller** | Nice!Nano v2 / Pro Micro | Nice!Nano v2 / Pro Micro |
-| **Display** | Nice!View / 128×32 OLED | Nice!View / 128×32 OLED |
-| **Connectivity** | BT 5.0 / USB-C | BT 5.0 / USB-C |
+| **Wireless sockets** | Mill-Max Low Profile | Mill-Max Low Profile |
+| **Wired sockets** | Kailh Choc hotswap | Kailh Choc hotswap |
+| **Wireless controller** | Nice!Nano v2 | Nice!Nano v2 |
+| **Wired controller** | Pro Micro | Pro Micro |
+| **Wireless display** | Nice!View | Nice!View |
+| **Wired display** | 128×32 OLED (optional) | 128×32 OLED (optional) |
 | **Battery** | 110mAh LiPo | 110mAh LiPo |
 | **Case** | 3D printed TPU | 3D printed TPU |
 | **PCB** | JLCPCB | JLCPCB |
@@ -131,11 +134,13 @@ Kits and complete builds available at [idlebuilds.com](https://idlebuilds.com).
 | Complete Build — Wired | from $175 |
 | Complete Build — Wireless | from $275 |
 
+Prices subject to change due to component availability and tariffs.
+
 ---
 
 ## Contact
 
-Questions, build help, or custom orders — reach out at [eldi@idlebuilds.com](mailto:eldi@idlebuilds.com)
+Questions, build help, or custom orders — reach out at [clayton@idlebuilds.com](mailto:clayton@idlebuilds.com)
 
 ---
 

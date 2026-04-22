@@ -6,6 +6,14 @@ QMK wired firmware for the Dinkey keyboard series by [Idle Builds](https://idleb
 
 ---
 
+## Status
+
+QMK PRs for the Dinkey 34 and Dinkey 32|30 are pending merge into the main QMK firmware repository. Once merged, the keyboards will be available natively in QMK without any additional setup.
+
+In the meantime, the keyboard definition files are in this folder and can be used by copying them into your local QMK installation.
+
+---
+
 ## Supported Boards
 
 | Board | QMK Path |
@@ -24,6 +32,7 @@ git clone https://github.com/qmk/qmk_firmware.git
 cd qmk_firmware
 qmk setup
 ```
+3. Copy the keyboard folders from this directory into `keyboards/idlebuilds/` in your QMK installation
 
 ---
 
@@ -44,7 +53,7 @@ qmk compile -kb idlebuilds/dinkey32_30 -km default
 ### Via QMK Toolbox (recommended)
 
 1. Download [QMK Toolbox](https://github.com/qmk/qmk_toolbox/releases)
-2. Open your `.hex` file in QMK Toolbox
+2. Open your compiled `.hex` file
 3. Double-tap reset on your Pro Micro to enter bootloader mode
 4. Click **Flash**
 5. Repeat for the other half
@@ -62,7 +71,7 @@ qmk flash -kb idlebuilds/dinkey32_30 -km default
 
 ## Handedness
 
-Both boards use `#define MASTER_LEFT` in `config.h`. The left half must always be connected via USB when using wired mode.
+Both boards use `#define MASTER_LEFT` in `config.h`. The left half must always be connected via USB.
 
 ---
 
@@ -84,7 +93,7 @@ Full assembly instructions at [idlebuilds.com/build-guide](https://idlebuilds.co
 
 ## Contact
 
-[eldi@idlebuilds.com](mailto:eldi@idlebuilds.com)
+[clayton@idlebuilds.com](mailto:clayton@idlebuilds.com)
 
 ---
 
