@@ -5,8 +5,10 @@ A series of split ergonomic keyboards designed and built out of a deep appreciat
 No coding is required! The wired QMK builds are ported with Vial and wireless ZMK builds are compatible with ZMK Studio for easy keymap changes.
 
 Both boards are sold as kits and complete builds at [idlebuilds.com](https://idlebuilds.com).
+
 ---
-### The Boards
+
+## The Boards
 <p align="center">
   <img src="docs/images/dinkey_32_30_32_key_config_zmk.png" width="49%">
   <img src="docs/images/dinkey_32_30_30_key_config_zmk.png" width="49%">
