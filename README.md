@@ -16,6 +16,7 @@ Both boards are sold as kits and complete builds at [idlebuilds.com](https://idl
 <p align="center">
   <img src="docs/images/dinkey_34_zmk.png" width="80%">
 </p>
+
 ---
 ### Dinkey 34
 
