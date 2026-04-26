@@ -6,7 +6,7 @@ No coding is required! The wired QMK builds are ported with Vial and wireless ZM
 
 Both boards are sold as kits and complete builds at [idlebuilds.com](https://idlebuilds.com).
 ---
-## The Boards
+### The Boards
 <p align="center">
   <img src="docs/images/dinkey_32_30_32_key_config_zmk.png" width="49%">
   <img src="docs/images/dinkey_32_30_30_key_config_zmk.png" width="49%">
@@ -14,6 +14,7 @@ Both boards are sold as kits and complete builds at [idlebuilds.com](https://idl
 <p align="center">
   <img src="docs/images/dinkey_34_zmk.png" width="80%">
 </p>
+---
 ### Dinkey 34
 
 34-key split running a 3×5+2 layout with a 3-key pinky column per side makes it easy to maintain a QWERTY layout without compromising. Good starting point if you're new to split keebs or if you just want something that works well without overthinking the key count and mapping.
