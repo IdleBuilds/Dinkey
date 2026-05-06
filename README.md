@@ -1,137 +1,141 @@
 # Dinkey
 
-A series of split ergonomic keyboards designed and built out of a deep appreciation for efficiency. This started as a personal project to build a minimalistic and travel friendly keyboard with hot swappable micro-controllers, oleds, and switches. The PCBs were designed for use with low profile choc switches to create a smaller footprint and less spacing between keycaps without the need for a plate.
-
-No coding is required! The wired QMK builds are ported with Vial and wireless ZMK builds are compatible with ZMK Studio for easy keymap changes.
-
-Both boards are sold as kits and complete builds at [idlebuilds.com](https://idlebuilds.com).
+Open-source split keyboard series by [Idle Builds](https://idlebuilds.com). Column-staggered, low-profile, wireless-first. Built around Kailh Choc V1 switches and the nice!nano v2.
 
 ---
 
-## The Boards
 <p align="center">
-  <img src="docs/images/dinkey_32_30_32_key_config_zmk.png" width="49%">
-  <img src="docs/images/dinkey_32_30_30_key_config_zmk.png" width="49%">
+  <img src="docs/images/dinkey_3230_30key.png" width="49%">
+  <img src="docs/images/dinkey_3230_32key.png" width="49%">
+</p>
+<p align="center">
+  <em>Dinkey 32|30 — 30-key config (left) and 32-key config (right). Same PCB, same firmware.</em>
 </p>
 <p align="center">
   <img src="docs/images/dinkey_34_zmk.png" width="80%">
 </p>
-
----
-### Dinkey 34
-
-34-key split running a 3×5+2 layout with a 3-key pinky column per side makes it easy to maintain a QWERTY layout without compromising. Good starting point if you're new to split keebs or if you just want something that works well without overthinking the key count and mapping.
-
-→ [ZMK firmware repo](https://github.com/IdleBuilds/zmk-config-dinkey_34)
+<p align="center">
+  <em>Dinkey 34 — 34-key wireless split. 3×5 column stagger + 2 thumb keys per side.</em>
+</p>
 
 ---
 
-### Dinkey 32|30
+## Boards
 
-This one is different. The PCB has a modular 4th pinky column that accepts one or two switches. No firmware change, no reflash, just populate what you want. 32 keys with both switches, 30 with one, nothing in the column if you want to go full minimal.
+| Board | Keys | Layout |
+|---|---|---|
+| Dinkey 34 | 34 | 3×5 column stagger + 2 thumb keys per side |
+| Dinkey 32\|30 | 30–32 | 3×5 column stagger + 2 thumb keys + modular 4th pinky column |
+| Dinkey 36 | 36 | 3×6 column stagger + 2 thumb keys per side *(not currently listed)* |
+| Dinkey 42 | 42 | 3×6 column stagger + 3 thumb keys per side *(not currently listed)* |
+| Dinkey 52 | 52 | 4×6 column stagger + 4 thumb keys per side *(not currently listed)* |
 
-There's nothing else out there quite like it. Most keyboards commit you to a key count. This one doesn't. It's the board I built for myself after years of trying everything else, and the 30-key configuration is the one I keep coming back to.
+### Dinkey 32|30 — Modular Pinky Column
 
-→ [ZMK firmware repo](https://github.com/IdleBuilds/zmk-config-dinkey_32_30)
-
----
-
-## Built to be Modular
-
-Every component on these boards is swappable:
-
-- **Switches** — Kailh Choc hotswap sockets, no soldering required to swap
-- **Microcontroller** — hotswap socket, drop in whatever you want
-- **Display** — nice!view slots in and out without tools
-
-This matters more than it sounds. You can order the wired kit, throw in a Pro Micro, and get up and running for well under $100. When you're ready to go wireless, pull the Pro Micro, drop in a nice!nano and a nice!view, and flash ZMK. Same board, different build. Nothing wasted.
+The 32|30 PCB has a 4th pinky column wired to accept one or two switches. Populate both for 32 keys, one for 30 — no firmware changes, no reflash. The firmware matrix handles both configurations identically.
 
 ---
 
 ## Firmware
 
-Both boards support multiple firmware options depending on your microcontroller:
+| Board | ZMK (wireless) | QMK (wired) | Vial (wired) |
+|---|---|---|---|
+| Dinkey 34 | [zmk-config-dinkey_34](https://github.com/IdleBuilds/zmk-config-dinkey_34) | [`qmk/dinkey34/`](./qmk/dinkey34) | [`vial-qmk/dinkey34/`](./vial-qmk/dinkey34) |
+| Dinkey 32\|30 | [zmk-config-dinkey_32_30](https://github.com/IdleBuilds/zmk-config-dinkey_32_30) | [`qmk/dinkey32_30/`](./qmk/dinkey32_30) | [`vial-qmk/dinkey32_30/`](./vial-qmk/dinkey32_30) |
+| Dinkey 36–52 | [`zmk/`](./zmk) | [`qmk/`](./qmk) | [`vial-qmk/`](./vial-qmk) *(not currently listed)* |
 
-**ZMK (wireless, recommended for nice!nano)** Full Bluetooth support, ZMK Studio for remapping without any code. Pre-flashed on all complete builds.
+The 34 and 32|30 have separate firmware — different PCB routing produces different physical layout definitions for ZMK Studio. The repos are not interchangeable.
 
-**QMK (wired, for Pro Micro)** Standard QMK, no frills. Good if you want wired-only or are working with an existing Pro Micro.
+ZMK config repos (34 and 32|30) include GitHub Actions CI — fork and push to build firmware without a local toolchain. See each repo's README for flashing instructions.
 
-**Vial (wired, QMK-based)** Real-time keymap editing via the Vial desktop app. No code required.
+**QMK PR status:** Pending upstream merge. Until merged, copy the board folder from `qmk/` into your local QMK installation under `keyboards/idlebuilds/`. Full instructions: [`qmk/README.md`](./qmk/README.md).
 
-The 34 and 32|30 have **separate firmware** due to different PCB routing and pin assignments. The repos are not interchangeable — use the repo that matches your board.
-
----
-
-## Kits vs. Complete Builds
-
-**Complete builds** come pre-flashed and ready to use. Plug in and go.
-
-**Kits** ship unflashed. Flashing instructions are in each firmware repo.
+**Vial PR status:** Pending upstream merge. Same process from `vial-qmk/`. Full instructions: [`vial-qmk/README.md`](./vial-qmk/README.md).
 
 ---
 
-## Repos
+## Schematics
 
-| Board | ZMK | QMK |
+Schematic reference images are in [`kicad/`](./kicad). KiCad source files are not included in this repo.
+
+| Board | Schematic |
+|---|---|
+| Dinkey 34 | [`kicad/dinkey_34/schematic.png`](./kicad/dinkey_34/schematic.png) |
+| Dinkey 36 | [`kicad/dinkey_36/schematic.png`](./kicad/dinkey_36/schematic.png) |
+| Dinkey 42 | [`kicad/dinkey_42/schematic.png`](./kicad/dinkey_42/schematic.png) |
+| Dinkey 52 | [`kicad/dinkey_52/schematic.png`](./kicad/dinkey_52/schematic.png) |
+
+---
+
+## Hardware Specs
+
+|  | Dinkey 34 | Dinkey 32\|30 |
 |---|---|---|
-| Dinkey 34 | [zmk-config-dinkey\_34](https://github.com/IdleBuilds/zmk-config-dinkey_34) | [QMK PR pending] |
-| Dinkey 32\|30 | [zmk-config-dinkey\_32\_30](https://github.com/IdleBuilds/zmk-config-dinkey_32_30) | [QMK PR pending] |
+| Keys | 34 | 30 or 32 |
+| MCU (wireless) | nice!nano v2 (nRF52840) | nice!nano v2 (nRF52840) |
+| MCU (wired) | Pro Micro (ATmega32U4) | Pro Micro (ATmega32U4) |
+| MCU socket | Mill-Max low profile (hotswap) | Mill-Max low profile (hotswap) |
+| Switches | Kailh Choc V1 (hotswap) | Kailh Choc V1 (hotswap) |
+| Display (wireless) | nice!view (hotswap) | nice!view (hotswap) |
+| Display (wired) | 128×32 OLED (optional) | 128×32 OLED (optional) |
+| Battery | 110mAh LiPo | 110mAh LiPo |
+| Split (wireless) | BLE, no TRRS | BLE, no TRRS |
+| Split (wired) | TRRS | TRRS |
+| Handedness | `MASTER_LEFT` | `MASTER_LEFT` |
+
+---
+
+## Repo Structure
+
+```
+kicad/
+  dinkey_34/          ← Schematic PNG
+  dinkey_36/          ← Schematic PNG
+  dinkey_42/          ← Schematic PNG
+  dinkey_52/          ← Schematic PNG
+qmk/
+  README.md           ← Setup and flashing instructions
+  dinkey34/           ← QMK keyboard definition
+  dinkey32_30/        ← QMK keyboard definition
+  dinkey36/           ← (not currently listed)
+  dinkey42/           ← (not currently listed)
+  dinkey52/           ← (not currently listed)
+vial-qmk/
+  README.md           ← Setup and flashing instructions
+  dinkey34/           ← Vial keyboard definition
+  dinkey32_30/        ← Vial keyboard definition
+  dinkey36/           ← (not currently listed)
+  dinkey42/           ← (not currently listed)
+  dinkey52/           ← (not currently listed)
+zmk/
+  zmk-config-dinkey_34/     ← ZMK source (see standalone repo above)
+  zmk-config-dinkey_32_30/  ← ZMK source (see standalone repo above)
+  zmk-config-dinkey_36/     ← (not currently listed)
+  zmk-config-dinkey_42/     ← (not currently listed)
+  zmk-config-dinkey_52/     ← (not currently listed)
+docs/images/          ← Board photos
+assets/               ← ZMK Studio screenshots
+```
 
 ---
 
 ## Build Guide
 
-Full step-by-step assembly instructions including soldering, flashing, and troubleshooting are at [idlebuilds.com/build-guide](https://idlebuilds.com/build-guide).
+Full assembly instructions at [idlebuilds.com/build-guide](https://idlebuilds.com/build-guide).
 
 ---
 
-## Hardware
+## Links
 
-| Folder | Contents |
-|---|---|
-| kicad/ | PCB design files (KiCad) |
-| qmk/ | QMK keyboard definition files |
-| vial-qmk/ | Vial keyboard definition files |
-| zmk/ | ZMK config files (legacy, see standalone repos above) |
-| docs/ | Images, schematics, reference files |
-
----
-
-## Specs
-
-|  | Dinkey 34 | Dinkey 32\|30 |
-|---|---|---|
-| Keys | 34 | 32 or 30 |
-| Switches | Kailh Choc V1 | Kailh Choc V1 |
-| MCU socket | Mill-Max low profile | Mill-Max low profile |
-| Switch sockets | Kailh Choc hotswap | Kailh Choc hotswap |
-| Wireless controller | Nice!Nano v2 | Nice!Nano v2 |
-| Wired controller | Pro Micro | Pro Micro |
-| Wireless display | Nice!View | Nice!View |
-| Wired display | 128×32 OLED (optional) | 128×32 OLED (optional) |
-| Battery | 110mAh LiPo | 110mAh LiPo |
-| Case | 3D printed | 3D printed |
+- [idlebuilds.com](https://idlebuilds.com)
+- [zmk-config-dinkey_34](https://github.com/IdleBuilds/zmk-config-dinkey_34)
+- [zmk-config-dinkey_32_30](https://github.com/IdleBuilds/zmk-config-dinkey_32_30)
+- [ZMK docs](https://zmk.dev/docs) · [ZMK Studio](https://studio.zmk.dev)
+- [QMK docs](https://docs.qmk.fm) · [QMK Toolbox](https://github.com/qmk/qmk_toolbox/releases)
+- [Vial](https://get.vial.today)
 
 ---
 
-## Purchasing
+## License
 
-Kits and complete builds available at [idlebuilds.com](https://idlebuilds.com).
-
-| Option | Price |
-|---|---|
-| Kit — Wired | from $80 |
-| Kit — Wireless | from $195 |
-| Complete Build — Wired | from $175 |
-| Complete Build — Wireless | from $275 |
-
-Prices subject to change due to component availability and tariffs.
-
----
-
-## About
-
-I'm Clayton. I design and build these keyboards myself out of Iowa. Idle Builds is a small side project. I'm not a company, just someone who got too into mechanical keyboards and wanted to share what I've made.
-
-[idlebuilds.com](https://idlebuilds.com) · [GitHub](https://github.com/IdleBuilds)  
-Questions, build help, or custom orders: clayton@idlebuilds.com
+Firmware: GPL-2.0

@@ -3,15 +3,10 @@
 
 #pragma once
 
-//see qmk docs for EE HANDS instructions
-#define EE_HANDS
+// Left half is always the USB master half.
+// EE_HANDS is not supported with the atmel-dfu bootloader.
+#define MASTER_LEFT
 
-//OLED 
+// OLED
 #define OLED_DISPLAY_128X32
 #define SPLIT_MODS_ENABLE
-
-//#define DYNAMIC_KEYMAP_LAYER_COUNT 4
-//#define VIAL_TAP_DANCE_ENTRIES 10
-//#define VIAL_COMBO_ENTRIES 10
-//#define VIAL_KEY_OVERRIDE_ENTRIES 5
-

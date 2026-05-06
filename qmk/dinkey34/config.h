@@ -3,28 +3,10 @@
 
 #pragma once
 
-//see qmk docs for EE HANDS instructions
-#define EE_HANDS
+// Left half is always the USB master half.
+// EE_HANDS is not supported with the atmel-dfu bootloader.
+#define MASTER_LEFT
 
-//OLED 
+// OLED
 #define OLED_DISPLAY_128X32
 #define SPLIT_MODS_ENABLE
-
-/*
- * Feature disable options
- *  These options are also useful to firmware size reduction.
- */
-
-/* disable debug print */
-//#define NO_DEBUG
-
-/* disable print */
-//#define NO_PRINT
-
-/* disable action features */
-//#define NO_ACTION_LAYER
-//#define NO_ACTION_TAPPING
-//#define NO_ACTION_ONESHOT
-
-
-
